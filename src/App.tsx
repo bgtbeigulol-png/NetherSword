@@ -1,6 +1,6 @@
 import React from 'react';
 import GeometricBackground from './components/GeometricBackground';
-importimport HeroSection from './components/HeroSection';
+import HeroSection from './components/HeroSection';
 import ChomikEasterEgg from './components/ChomikEasterEgg';
 import CustomCursor from './components/CustomCursor';
 
