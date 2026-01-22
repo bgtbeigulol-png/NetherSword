@@ -5,14 +5,13 @@ const CustomCursor: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
-  const cursorX = useSpring(0, { damping: 20, stiffness: 250 });
-  const cursorY = useSpring(0, { damping: 20, stiffness: 250 });
+  const cursorX = useSpring(0, { damping: 25, stiffness: 300 });
+  const cursorY = useSpring(0, { damping: 25, stiffness: 300 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
-      setMousePos({ x: e.clientX, y: e.clientY });
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -42,7 +41,10 @@ const CustomCursor: React.FC = () => {
     <>
       {/* Main Cursor Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-amber-400 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 w-3 h-3 bg-amber-400 rounded-full pointer-events-none z-[9999]"
+        animate={{
+          scale: isHovering ? 0.5 : 1,
+        }}
         style={{
           x: cursorX,
           y: cursorY,
