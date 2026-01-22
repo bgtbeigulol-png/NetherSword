@@ -21,7 +21,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
     if (this.state.hasError) {
       return (
         <div style={{ padding: '40px', color: '#fbbf24', background: '#1a0f0a', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: 'Inter, sans-serif' }}>
-          <h1 style={{ fontSize: '2rem', marginBottom: '1rem', tracking: '0.1em' }}>APPLICATION ERROR</h1>
+          <h1 style={{ fontSize: '2rem', marginBottom: '1rem', letterSpacing: '0.1em' }}>APPLICATION ERROR</h1>
           <div style={{ background: '#27130a', padding: '20px', borderRadius: '8px', border: '1px solid #78350f', maxWidth: '80%', overflow: 'auto' }}>
             <code style={{ fontSize: '0.9rem', color: '#fde68a' }}>{this.state.error?.toString()}</code>
           </div>
